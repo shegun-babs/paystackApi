@@ -48,10 +48,10 @@ class HttpQuery
             $apiResponse = $this->client->request('POST', $url, [
                 'json' => $this->params,
             ]);
+            $http_status = $apiResponse->getStatusCode();
             $data = (string)$apiResponse->getBody();
             $response = json_decode($data);
             $status = TRUE;
-            $http_status = $apiResponse->getStatusCode();
         } catch (RequestException $exception) {
             $http_status = $exception->getCode();
             $status = FALSE;
