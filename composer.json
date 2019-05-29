@@ -1,0 +1,25 @@
+{
+    "name": "shegunbabs/paystack",
+    "description": "PayStack API library in PHP",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Shegun Babs",
+            "email": "shegun.babs@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "php": ">=5.5.0",
+        "guzzlehttp/guzzle": "~6.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "ShegunBabs\\PayStack\\": "src/"
+        },
+        "files": [
+            "src/Helpers.php"
+        ]
+    }
+}
