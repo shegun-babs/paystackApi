@@ -5,6 +5,9 @@ namespace ShegunBabs\PayStack;
 class Transaction extends HttpQuery
 {
 
+    /**
+     * @method \ShegunBabs\PayStack\Transaction initialize()
+     */
 
     public function initialize(array $data)
     {
