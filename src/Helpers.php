@@ -1,4 +1,5 @@
 <?php
+namespace ShegunBabs\PayStack;
 
 if ( !function_exists('call_url') )
 {
