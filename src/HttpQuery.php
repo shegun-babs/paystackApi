@@ -55,6 +55,7 @@ class HttpQuery
         } catch (RequestException $exception) {
             $http_status = $exception->getCode();
             $status = FALSE;
+            $response = $exception->getMessage();
         }
 
         return compact('status', 'http_status', 'response');
