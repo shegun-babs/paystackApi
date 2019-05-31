@@ -5,6 +5,8 @@ namespace ShegunBabs\PayStack;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\RequestException;
 
+const EXTRACT_ERROR_RETURN_TYPE = 0; 
+
 class HttpQuery
 {
 
@@ -53,9 +55,10 @@ class HttpQuery
             $response = json_decode($data);
             $status = TRUE;
         } catch (RequestException $exception) {
+            $extractedErrors = $this->extractError($exception->getMessage());
             $http_status = $exception->getCode();
             $status = FALSE;
-            $response = $exception->getMessage();
+            $response = $extractedErrors;
         }
 
         return compact('status', 'http_status', 'response');
@@ -82,13 +85,31 @@ class HttpQuery
             $status = TRUE;
 
         } catch (RequestException $e) {
+            $extractedErrors = $this->extractError($e->getMessage());
             $http_status = $e->getCode();
             $status = FALSE;
-            $response = $e->getMessage();
+            $response = $extractedErrors;
         }
         return compact('status', 'http_status', 'response');
     }
 
 
+    private function extractError($e_message, $returnType=0)
+    {
+        //@TODO implement configurable return type
+        $out = null;
+        $pattern = "/({[\s\"a-zA-Z:,']+})/";
+        if ( \preg_match($pattern, $e_message, $matches) )
+        {
+            $out = json_decode(trim($matches[0]));
+        }
+        return $out;
+    }
+
+
+    private function handleError($response)
+    {
+
+    }
    
 }
