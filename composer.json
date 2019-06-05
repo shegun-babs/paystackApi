@@ -21,8 +21,6 @@
         },
         "files": [
             "src/Helpers.php"
-        ],
-        "classmap": [
         ]
     },
     "require-dev": {
