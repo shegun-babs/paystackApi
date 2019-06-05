@@ -7,6 +7,7 @@ class Transaction extends HttpQuery
 
     /**
      * @method \ShegunBabs\PayStack\Transaction initialize()
+     * @method \ShegunBabs\PayStack\Transaction verify()
      */
 
     public function initialize(array $data)
