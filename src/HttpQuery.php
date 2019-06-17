@@ -71,7 +71,6 @@ class HttpQuery
         $response = NULL;
 
         try {
-
             if (is_null($this->params))
                 $response = $this->client->request('GET', $url);
             else

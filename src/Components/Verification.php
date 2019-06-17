@@ -1,7 +1,8 @@
 <?php
 
-namespace ShegunBabs\PayStack;
+namespace ShegunBabs\PayStack\Components;
 
+use ShegunBabs\PayStack\HttpQuery;
 
 class Verification extends HttpQuery
 {
