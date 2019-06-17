@@ -7,7 +7,6 @@ use ShegunBabs\PayStack\HttpQuery;
 class Verification extends HttpQuery
 {
 
-
     /**
      * Resolve BVN
      * @param string $bvn

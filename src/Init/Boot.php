@@ -8,9 +8,8 @@ use ShegunBabs\PayStack\Components\Transaction;
 /**
  * @method initialize(array $params)
  * @method verify(string $transaction_ref)
- *
- *
- *
+ * @method resolveCardBin(string $bin)
+ * @method resolveAccountNumber(array $params)
  */
 
 class Boot
