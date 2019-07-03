@@ -19,4 +19,18 @@ class Transaction extends HttpQuery
         $url = "transaction/verify/$transaction_ref";
         return $this->get($url);
     }
+
+
+    public function checkAuthorization(array $params)
+    {
+        $url = 'transaction/check_authorization';
+        return $this->params($params)->post($url);
+    }
+
+
+    public function chargeAuthorization(array $params)
+    {
+        $url = 'transaction/charge_authorization';
+        return $this->params($params)->post($url);
+    }
 }

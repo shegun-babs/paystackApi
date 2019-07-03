@@ -39,7 +39,17 @@ function resolveBin($bin)
     return $paystack->verification->resolveCardBin($bin);
 }
 
+function checkAuthorization($authorization)
+{
+    $paystack = new PayStack(SECRET);
+    $params = [
+        'authorization_code' => 'AUTH_0k0kavm1r6',
+        'amount' => 15000,
+        'email' => 'b.adeyemi@example.com'
+    ];
+    return $paystack->transaction->checkAuthorization($params);
+}
 
 
 
-dump(resolveBin('539983'));
+dump(resolveBin('539983'), checkAuthorization('AUTH_0k0kavm1r6'));

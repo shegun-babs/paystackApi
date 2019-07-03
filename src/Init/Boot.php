@@ -10,6 +10,7 @@ use ShegunBabs\PayStack\Components\Transaction;
  * @method verify(string $transaction_ref)
  * @method resolveCardBin(string $bin)
  * @method resolveAccountNumber(array $params)
+ * @method checkAuthorization(array $params)
  */
 
 class Boot
